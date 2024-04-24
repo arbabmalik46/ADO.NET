@@ -5,6 +5,11 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET Practice", "ADO.NET Practice.csproj", "{7F5F2CA5-B6F6-4451-9EE0-71B03253170C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{DDF9A757-8650-4D0F-A593-D6A12ACF5FD3}"
+	ProjectSection(SolutionItems) = preProject
+		1. SQLConnection C#.txt = 1. SQLConnection C#.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
