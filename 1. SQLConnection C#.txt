@@ -1,2 +1,5 @@
 First you have install the library from ADO.NET then you have to import the namespace in your project.
 Your connection string will look like this: string connectionString = "Data Source=DESKTOP-7UIKS3S\\SQLEXPRESS;Initial Catalog = Business; Integrated Security = true";
+
+Use link https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqldatareader?view=sqlclient-dotnet-standard-5.2 to learn about SQLDataReader class
+	
