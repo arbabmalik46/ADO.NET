@@ -191,47 +191,58 @@ namespace Practice
             //}
             #endregion
             #region ADO.NET Data Table
-            try
+            //try
+            //{
+            //    DataTable dataTable = new DataTable("employees");
+            //    DataColumn dataColumn = new DataColumn("id");
+            //    dataColumn.ColumnName = "ID";
+            //    dataColumn.Caption = "ID";
+            //    dataColumn.AutoIncrement = true;
+            //    dataColumn.AutoIncrementSeed = 1;
+            //    dataColumn.AutoIncrementStep = 1;
+            //    dataColumn.AllowDBNull = false;
+            //    dataColumn.Unique = true;
+            //    dataColumn.DataType = typeof(int);
+            //    dataTable.Columns.Add(dataColumn);
+
+            //    DataColumn dataColumn2 = new DataColumn("name");
+            //    dataColumn2.ColumnName = "Name";
+            //    dataColumn2.DefaultValue = null;
+            //    dataColumn2.Caption = "Name";
+            //    dataColumn2.AllowDBNull = false;
+            //    dataColumn2.DataType = typeof(string);
+            //    dataTable.Columns.Add(dataColumn2);
+
+            //    DataRow dataRow = dataTable.NewRow();
+            //    dataRow["id"] = 1;
+            //    dataRow["name"] = "Ali";
+            //    dataTable.Rows.Add(dataRow);
+            //    dataTable.Rows.Add(2,"Arbab");
+            //    dataTable.Rows.Add(3,"Hamza");
+            //    dataTable.Rows.Add(4,"Adil");
+
+            //    dataTable.PrimaryKey = new DataColumn[] { dataColumn };
+
+
+            //    foreach (DataRow item in dataTable.Rows)
+            //    {
+            //        Console.WriteLine("ID: " + item["ID"] + " Name: " + item["name"]);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            #endregion
+            #region DataSet
+            string query = "SelectAllCities";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query,con);
+            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            foreach (DataRow item in dataSet.Tables[0].Rows)
             {
-                DataTable dataTable = new DataTable("employees");
-                DataColumn dataColumn = new DataColumn("id");
-                dataColumn.ColumnName = "ID";
-                dataColumn.Caption = "ID";
-                dataColumn.AutoIncrement = true;
-                dataColumn.AutoIncrementSeed = 1;
-                dataColumn.AutoIncrementStep = 1;
-                dataColumn.AllowDBNull = false;
-                dataColumn.Unique = true;
-                dataColumn.DataType = typeof(int);
-                dataTable.Columns.Add(dataColumn);
-
-                DataColumn dataColumn2 = new DataColumn("name");
-                dataColumn2.ColumnName = "Name";
-                dataColumn2.DefaultValue = null;
-                dataColumn2.Caption = "Name";
-                dataColumn2.AllowDBNull = false;
-                dataColumn2.DataType = typeof(string);
-                dataTable.Columns.Add(dataColumn2);
-
-                DataRow dataRow = dataTable.NewRow();
-                dataRow["id"] = 1;
-                dataRow["name"] = "Ali";
-                dataTable.Rows.Add(dataRow);
-                dataTable.Rows.Add(2,"Arbab");
-                dataTable.Rows.Add(3,"Hamza");
-                dataTable.Rows.Add(4,"Adil");
-
-                dataTable.PrimaryKey = new DataColumn[] { dataColumn };
-
-
-                foreach (DataRow item in dataTable.Rows)
-                {
-                    Console.WriteLine("ID: " + item["ID"] + " Name: " + item["name"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                Console.WriteLine(item[0]);
             }
             #endregion
 
