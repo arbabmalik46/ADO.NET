@@ -240,7 +240,7 @@ namespace Practice
             dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
-            foreach (DataRow item in dataSet.Tables[0].Rows)
+            foreach (DataRow item in dataSet.Tables["."].Rows)
             {
                 Console.WriteLine(item[0]);
             }
